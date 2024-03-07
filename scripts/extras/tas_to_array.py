@@ -3,7 +3,9 @@ tas = open("polytrack.tas", "r")
 # process the tas
 iarray = []
 for i in tas:
-    data = i.split(":")
+    if i[0] == "#":
+        continue
+    data = i.split(",")
     iup = False
     ileft = False
     idown = False
